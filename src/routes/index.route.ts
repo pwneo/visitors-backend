@@ -1,9 +1,8 @@
 import {Router, Request, Response} from "express";
+import visitorRouter from "./visitor.router";
 
 const routes = Router();
 
-routes.get('/', (request: Request, response: Response) => {
-    return response.json({message: 'Hello routes!'});
-});
+routes.use('/visitors', visitorRouter);
 
 export default routes;
